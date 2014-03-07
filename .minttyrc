@@ -1,0 +1,10 @@
+BoldAsFont=no
+Term=xterm-256color
+RightClickAction=paste
+Scrollbar=none
+PgUpDnScroll=yes
+Font=Consolas
+FontHeight=10
+BackgroundColour=28,28,28
+ForegroundColour=192,192,192
+Transparency=low

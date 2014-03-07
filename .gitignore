@@ -1,0 +1,13 @@
+# ignore library/out files
+*.[oa]
+*.out
+
+# ignore the classes and projects directories
+classes/
+projects/
+
+# ignore ruby gems
+.gems/
+
+# ignore less history
+.lesshst

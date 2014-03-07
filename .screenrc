@@ -1,0 +1,10 @@
+# Screen Options
+shell bash # Default terminal to bash
+startup_message off # Turn off the startup message
+defscrollback = 5000 # Keep a history
+shelltitle '$ |bash' # Dynamic window title
+msgwait 1 # Set message timeout to 1 sec
+altscreen on # allow man/vim/less to open on alternate screens
+
+# Status line: green hostname, cyan window list, and time/date at right
+hardstatus alwayslastline "%{=b}%H%{G} %= %{d}%-w %{B}%n %t %{d}%+w %= %{d}[%c] %Y-%m-%d"
