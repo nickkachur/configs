@@ -202,9 +202,5 @@ alias du='du -h'
 # 
 # alias cd=cd_func
 
-
-# Powerline Support
-bash ~/.git/repos/powerline/powerline/bindings/bash/powerline.sh
-
 # Ensure 256 color support
 export TERM=xterm-256color
