@@ -11,3 +11,10 @@ projects/
 
 # ignore less history
 .lesshst
+
+# ignore ssh private keys
+id_rsa
+
+# ignore histories
+*history
+*hst

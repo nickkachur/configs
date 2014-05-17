@@ -66,7 +66,7 @@
 # History Options
 #
 # Don't put duplicate lines in the history.
-# export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 #
 # Ignore some controlling instructions
 # HISTIGNORE is a colon-delimited list of patterns which should be excluded.
@@ -116,9 +116,6 @@ alias du='du -h'
  alias l='ls -CF'                              #
  alias ..='cd ..'                              # easy movement
 
-# Custom aliases/commands
- alias __current_class='cd ~/classes/cs172'    # cd to current class
- alias g++='g++ -std=c++11 -Wall'              # compile with current std & warnings
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
@@ -130,9 +127,9 @@ alias du='du -h'
 # Functions
 #
 # Some people use a different file for functions
-# if [ -f "${HOME}/.bash_functions" ]; then
-#   source "${HOME}/.bash_functions"
-# fi
+ if [ -f "${HOME}/.bash_functions" ]; then
+   source "${HOME}/.bash_functions"
+ fi
 #
 # Some example functions:
 #
