@@ -1,17 +1,8 @@
 " Nick Kachur <nkachur@drexel.edu>
 
-" Vundle (Not functioning currently) {{{
- 
+" Vundle (Plugin Management) {{{
     " Activate Vundle config
     source ~/.vim/bundles.vim
-
-    " Bundle 'maciakl/vim-neatstatus'
-    " Bundle 'michalbachowski/vim-wombat256mod'
-    " Bundle 'rainux/vim-desert-warm-256'
-    " Bundle 'UltiSnips'
-    " Bundle 'fholgado/minibufexpl'
-    " Bundle 'zenburn'
-
 " }}}
 
 " Basics {{{
@@ -31,19 +22,20 @@
     set softtabstop=4 " number of spaces per tab while editing
     set expandtab " tabs count as spaces
     set shiftwidth=4 " number of spaces to shift when using '>>' or '<<'
+    filetype plugin indent on " use indent rules for current filetype
+    set autoindent " default to keep same indent as previous line
+    set smartindent " used with autoindent, moves '{' etc. automatically
+    set smarttab " inserts/delets shiftwidth number of spaces in front of lines
 " }}}
 
 " UI Config {{{
     set number " show line numbers
     set showcmd " show previous command in the bottom bar
     set cmdheight=2 " set command menu height to two rows
-    set autoindent
-    set smartindent
-    set smarttab
-    " set cursorline " Doesn't like to work on man systems
+    set confirm " when '!' is not supplied, ask for confirmation if necessary
     set colorcolumn=82,83 " Add color down columns 82-83
-    hi ColorColumn ctermbg=236 
-    " hi ColorLine ctermbg=236 
+    hi ColorColumn ctermbg=236
+    set cursorline " highlight current line, doesn't always work properly
     set wildmenu " visual autocomplete for cmd menu
     set showmatch " highlight matching parentheses/brackets/etc.
     set backspace=eol,start,indent " backspace key works on eol, start of line, and tabs

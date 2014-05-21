@@ -1,20 +1,8 @@
-# ignore library/out files
-*.[oa]
-*.out
-
-# ignore the classes and projects directories
-classes/
-projects/
-
-# ignore ruby gems
-.gems/
-
-# ignore less history
-.lesshst
+# ignore history files
+.*hst
+.*hist
+.*history
 
 # ignore ssh private keys
 id_rsa
 
-# ignore histories
-*history
-*hst
