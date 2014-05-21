@@ -10,7 +10,7 @@ Bundle 'gmarik/Vundle.vim'
 
 " Add Favorite plugins
 Bundle 'maciakl/vim-neatstatus'
-Bundle 'fholgado/minibufexpl'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'UltiSnips'
 
 " Colors
