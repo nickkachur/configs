@@ -199,5 +199,3 @@ alias du='du -h'
 # 
 # alias cd=cd_func
 
-# Ensure 256 color support
-export TERM=xterm-256color
