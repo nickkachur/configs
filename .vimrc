@@ -1,22 +1,23 @@
 " Nick Kachur <nkachur@drexel.edu>
 
-" Basics {{{
-    set nocompatible " not vi compatible (all the good stuff)
-    filetype off
-    set wildignore=*.o,*.out,*.pyc
-" }}}
-
 " Vundle (Not functioning currently) {{{
-    " set rtp+=~/.vim/bundle/vundle/
-    " call vundle#rc()
-    " Bundle 'gmarik/vundle'
-        " add bundles here:
+ 
+    " Activate Vundle config
+    source ~/.vim/bundles.vim
+
     " Bundle 'maciakl/vim-neatstatus'
     " Bundle 'michalbachowski/vim-wombat256mod'
     " Bundle 'rainux/vim-desert-warm-256'
     " Bundle 'UltiSnips'
     " Bundle 'fholgado/minibufexpl'
     " Bundle 'zenburn'
+
+" }}}
+
+" Basics {{{
+    set nocompatible " not vi compatible (all the good stuff)
+    filetype off
+    set wildignore=*.o,*.out,*.pyc
 " }}}
 
 " Syntax and colors {{{
