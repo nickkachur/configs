@@ -6,3 +6,5 @@
 # ignore ssh private keys
 id_rsa
 
+# ignore vim bundles
+.vim/bundle/
