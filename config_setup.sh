@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setup Vundle for Vim
-vim -u bundles.vim +BundleInstall +q
+vim -u ~/.vim/bundles.vim +BundleInstall +q
 
 # Setup symlinks for home directory (if required)
 
