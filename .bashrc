@@ -199,3 +199,7 @@ alias du='du -h'
 # 
 # alias cd=cd_func
 
+# If terminal is xterm, force it to use 256 colors
+if [ "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
