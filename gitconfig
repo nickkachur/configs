@@ -1,7 +1,10 @@
 [user]
-	name = nickkachur
+	name = Nicholas Kachur
 	email = nick.e.kachur@gmail.com
 [core]
 	editor = vim
+	pager = less
 [merge]
 	tool = vimdiff
+[color]
+	ui = auto
