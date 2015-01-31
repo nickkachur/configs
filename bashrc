@@ -1,50 +1,44 @@
 # ~/.bashrc: executed by bash(1) for interactive shells.
 # Note: commands indented one (or more) spaces do are not placed in history
+
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-# Wrap everything in a main function so we can define other functions at the end
-main() {
-### History Options
+# Don't put duplicate lines in the history.
+ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 
-    # GNU and BSD use different options schemes, so we need to know which we're on
-    local platform="$(__get_coreutils_platform)"
+### Aliases
+# Default to human readable figures
+ alias df='df -h'
+ alias du='du -h'
 
-    # Don't put duplicate lines in the history.
-    export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+# Pagers
+ alias less='less -r'                          # raw control characters
+ alias o='less'                                # make less easier to call
 
-    ### Aliases
-    # Default to human readable figures
-    alias df='df -h'
-    alias du='du -h'
+# Grep
+ alias grep='grep --color'                     # show differences in colour
+ alias egrep='egrep --color=auto'              # show differences in colour
+ alias fgrep='fgrep --color=auto'              # show differences in colour
 
-    # Misc
-    alias less='less -r'                          # raw control characters
-    alias o='less'                                # make less easier to call
-    alias whence='type -a'                        # where, of a sort
-    alias grep='grep --color'                     # show differences in colour
-    alias egrep='egrep --color=auto'              # show differences in colour
-    alias fgrep='fgrep --color=auto'              # show differences in colour
-    
 
-    # Some shortcuts for different directory listings
-    # GNU and BSD ls use different options for colored output
-    if [[ "$platform" == "gnu" ]]; then
-        alias ls='ls -hF --color=tty'                 # classify files in colour
-    else
-        alias ls='ls -hFG'
-    fi
-    
-    alias ll='ls -l'                              # long list
-    alias la='ls -A'                              # all but . and ..
-    alias l='ls -CF'                              #
-    alias ..='cd ..'                              # easy movement
+# Some shortcuts for different directory listings
+# GNU and Darwin/BSD ls use different options for colored output
+ if [[ "$(uname)" == "Darwin" ]]; then
+     alias ls='ls -hFG'              # classify files in color (BSD/Darwin)
+ else
+     alias ls='ls -hF --color=tty'   # ditto (assume GNU if not Darwin)
+ fi
 
-    # If terminal is xterm, force it to use 256 colors
-    if [ "$TERM" == "xterm" ]; then
-        export TERM=xterm-256color
-    fi
-}
+ alias l='ls'                        # short-shortcut to ls
+ alias ll='ls -l'                    # long list
+ alias la='ls -A'                    # all but . and ..
+ alias ..='cd ..'                    # easy movement
+
+# If terminal is xterm, force it to use 256 colors
+ if [ "$TERM" == "xterm" ]; then
+     export TERM=xterm-256color
+ fi
 
 ##################################################
 # SHELL FUNCTIONS 
@@ -56,7 +50,7 @@ main() {
 ##################################################
 __list_my_functions() {
     if [ "$1" != "-a" ]; then
-	# Get rid of non-personal private functions
+        # Get rid of non-personal private functions (e.g. git aliases)
         set | grep '^__[^_]' | grep -v "__ " | grep -v "^__git" | grep -v "__grub"
     else
         set | grep '^__[^_]'
@@ -86,7 +80,7 @@ ___upto_complete() {
 complete -F ___upto_complete __upto
 
 ##################################################
-# Return true if we're using GNU Coreutils
+# Return the platform of our coreutils
 ##################################################
 __get_coreutils_platform() {
     local ls_version="$(ls --version 2>/dev/null)"
@@ -97,4 +91,3 @@ __get_coreutils_platform() {
     fi
 }
 
-main

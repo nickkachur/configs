@@ -7,7 +7,7 @@
 id_rsa
 
 # ignore vim bundles
-.vim/bundle/
+vim/bundle/
 
 # ignore vim swap files
 *.swp
