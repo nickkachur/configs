@@ -21,13 +21,12 @@
  alias egrep='egrep --color=auto'              # show differences in colour
  alias fgrep='fgrep --color=auto'              # show differences in colour
 
-
 # Some shortcuts for different directory listings
 # GNU and Darwin/BSD ls use different options for colored output
  if [[ "$(uname)" == "Darwin" ]]; then
-     alias ls='ls -hFG'              # classify files in color (BSD/Darwin)
+     alias ls='ls -hG'              # list files in color (BSD/Darwin)
  else
-     alias ls='ls -hF --color=tty'   # ditto (assume GNU if not Darwin)
+     alias ls='ls -h --color=tty'   # ditto (assume GNU if not Darwin)
  fi
 
  alias l='ls'                        # short-shortcut to ls
@@ -36,9 +35,23 @@
  alias ..='cd ..'                    # easy movement
 
 # If terminal is xterm, force it to use 256 colors
+# TODO: find a better way to determine color compatibility
  if [ "$TERM" == "xterm" ]; then
      export TERM=xterm-256color
  fi
+
+# Customize shell prompt
+# Setup some convenience variables
+ host="\h"     # e.g. 'tux'
+ user="\u"     # e.g. 'nkachur'
+ path="\w"     # e.g. '~/configs'
+ prompt="\$"   # display '#' if root, otherwise display '$'
+ green="\[\e[0;32m\]"   # Color code for green foreground
+ black="\[\e[0;30m\]"   # Color code for black foreground
+ reset="\[\e[0m\]"      # Reset to default color code (e.g. black)
+
+ export PS1="$green$user@$host $reset$path $prompt "
+
 
 ##################################################
 # SHELL FUNCTIONS 
