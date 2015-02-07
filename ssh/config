@@ -1,0 +1,21 @@
+# Use personal ssh key for all github interactions
+Host github.com
+    IdentityFile ~/.ssh/personal.id_rsa
+
+# Settings for all CS hosts
+Host *.cs.drexel.edu
+    User nek38
+    IdentityFile ~/.ssh/cs.id_rsa
+
+# Shortcut to tux
+Host tux
+    HostName tux.cs.drexel.edu
+    User nek38
+    IdentityFile ~/.ssh/cs.id_rsa
+
+# Shortcut to Digital Ocean Ghost droplet
+Host ghost
+    HostName 104.131.157.186
+    User nkachur 
+    IdentityFile ~/.ssh/personal.id_rsa
+
