@@ -1,9 +1,9 @@
 " Nick Kachur <nkachur@drexel.edu>
 
-" Vundle (Plugin Management) {{{
+" Vundle (Plugin Management) {{{"{{{
     " Activate Vundle config
     source ~/.vim/bundles.vim
-" }}}
+" }}}"}}}
 
 " Basics {{{
     set nocompatible " not vi compatible (all the good stuff)
@@ -33,7 +33,7 @@
     set showcmd " show previous command in the bottom bar
     set cmdheight=2 " set command menu height to two rows
     set confirm " when '!' is not supplied, ask for confirmation if necessary
-    set colorcolumn=82,83 " Add color down columns 82-83
+    set colorcolumn=72,80,81 " Add color down columns 72 (for docstrings) and 80 (for code)
     hi ColorColumn ctermbg=236
     set cursorline " highlight current line, doesn't always work properly
     set wildmenu " visual autocomplete for cmd menu
