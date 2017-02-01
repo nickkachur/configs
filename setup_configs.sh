@@ -6,8 +6,8 @@ main() {
     config_dir=$(dirname $0)
 
     for file in $(ls $config_dir); do
-        if [[ "$file" == "README.md" || "$file" == "setup_configs.sh" ]]; then
-            # Skip Readme and this script (;
+        if [[ "$file" == "README.md" || "$file" == "LICENSE" || "$file" == "setup_configs.sh" ]]; then
+            # Skip Readme, License, and this script (;
             continue
         else
             link_config_file $file $config_dir
