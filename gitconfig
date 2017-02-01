@@ -8,3 +8,5 @@
 	tool = vimdiff
 [color]
 	ui = auto
+[push]
+	deafult = simple
