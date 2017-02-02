@@ -41,6 +41,7 @@
     set backspace=eol,start,indent " backspace key works on eol, start of line, and tabs
     set whichwrap+=<,>,h,l " allow h, l, and left/right to move to next line
     set nowrap " no line wrapping
+    set textwidth=72 " set text width for when we do want automagic wrapping (structured text)
     set encoding=utf8 " use UTF-8 standard encoding
 " }}}
 
