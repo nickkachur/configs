@@ -29,14 +29,14 @@ link_config_file() {
         read user_input
         if [[ "$user_input" == "y" || "$user_input" == "Y" ]]; then
             mv "$dotfile" "$dotfile.bak"
-            echo "Info:   Created backup file: '$dotfile.bak'"
+            echo "Info:    Created backup file: '$dotfile.bak'"
         else
-            echo "Info:   Skipping '$dotfile'"
+            echo "Info:    Skipping '$dotfile'"
             return
         fi
     fi
 
-    echo "Info:   Creating link for '$dotfile' -> '$pathname/$filename'"
+    echo "Info:    Creating link for '$dotfile' -> '$pathname/$filename'"
     ln -s "$pathname/$filename" "$HOME/.$filename" 
 }
 
