@@ -3,8 +3,9 @@
 *hist
 *history
 
-# ignore ssh private keys
-*id_rsa
+# ignore ssh directory except ssh config file
+ssh/*
+!ssh/config
 
 # ignore vim bundles
 vim/bundle
