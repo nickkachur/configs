@@ -13,6 +13,9 @@ main() {
             link_config_file $file $config_dir
         fi
     done
+
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 }
 
 # Utility function to link each config file
