@@ -17,7 +17,6 @@ Plugin 'gmarik/Vundle.vim'
 " Add Favorite plugins
 Plugin 'maciakl/vim-neatstatus'
 Plugin 'fholgado/minibufexpl.vim'
-Plugin 'UltiSnips'
 
 " Colors
 Plugin 'flazz/vim-colorschemes'
