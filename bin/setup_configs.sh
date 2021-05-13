@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# Setup symlinks for home directory (if required)
+########################################################################
+###  Setup symlinks for home directory (if required).
+########################################################################
+
 
 main() {
-    config_dir=$(dirname $0)
+    config_dir=$CONFIGS_WORKSPACE_ROOT
 
     for file in $(ls $config_dir); do
         if [[ "$file" == "README.md" || "$file" == "LICENSE" || "$file" == "setup_configs.sh" ]]; then
@@ -14,11 +17,13 @@ main() {
         fi
     done
 
+    # TODO(2021) This is probably completely outdated and needs replaced.
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 }
 
-# Utility function to link each config file
+
+### Utility function to link each config file.
 link_config_file() {
     local filename=$1
     local pathname=$2

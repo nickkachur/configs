@@ -9,5 +9,14 @@
 ###
 ########################################################################
 
+
+########################################################################
+###  Base variables to make this whole thing work.
+########################################################################
+ export CONFIGS_WORKSPACE_ROOT="unfilled CONFIGS_WORKSPACE_ROOT variable"
+
+########################################################################
+###  Git variables.
+########################################################################
  export GIT_NAME="unfilled GIT_NAME variable"
  export GIT_EMAIL="unfilled GIT_EMAIL variable"
