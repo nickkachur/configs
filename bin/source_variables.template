@@ -11,9 +11,43 @@
 
 
 ########################################################################
-###  Base variables to make this whole thing work.
+###  Configs project base variables to make this whole thing work.
 ########################################################################
  export CONFIGS_WORKSPACE_ROOT="unfilled CONFIGS_WORKSPACE_ROOT variable"
+ export CONFIGS_BINFILES_ROOT="$CONFIGS_WORKSPACE_ROOT/bin"
+
+# None of your secret ssh keys, API keys, or pass-phrases should be
+# committed to git, let alone pushed to a remote like GitHub or GitLab.
+# Not committing the following file and keeping it local to your machine
+# as securely as you can is probably ideal, even if not always easiest.
+#
+# Note: you can probably keep this in your home directory somewhere.
+#
+# TODO: source this at the end of the file, once everything has been
+# setup? Or do it now? Or don't provide our own definition and force the
+# user to manually add this to their bashrc during setup?
+ export CONFIGS_SECRET_SOURCE="unfilled CONFIGS_SECRET_SOURCE variable"
+
+# Add the binfiles directory to the path so the files within are easily
+# available. Add at the end _not_ beginning, so they take less
+# precedence than existing PATH entries, and cause less conflict. Don't
+# add duplicates out of courtesy to people debugging problems with their
+# PATH variable.
+#
+# WARNING: if you keep getting the wrong version of a binfile, maybe
+# your PATH is messed up.
+#
+# SECOND WARNING / TODO: Something about this is not quite right, but
+# early in the morning with only so much time before work, it will have
+# to live as-is for now.
+ if [[ $(echo $PATH | grep -qv "$CONFIGS_BINFILES_ROOT") ]]; then
+    export PATH="$PATH:$CONFIGS_BINFILES_ROOT"
+ fi
+
+# You can probably just set this to "...=$HOME", it's really only
+# separated out for debugging purposes.
+ export CONFIGS_DEPLOY_DIR="unfilled CONFIGS_DEPLOY_DIR variable"
+
 
 ########################################################################
 ###  Git variables.
