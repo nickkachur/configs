@@ -1,0 +1,13 @@
+########################################################################
+###
+###  File to contain all environment variables needing sourced.
+###
+########################################################################
+###
+###  Variables like $HOME and $USER are already set for you. Don't
+###  override them unless you know the consequences.
+###
+########################################################################
+
+ export GIT_NAME="Nicholas Kachur"
+ export GIT_EMAIL="nick.e.kachur@gmail.com"
